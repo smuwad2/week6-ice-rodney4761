@@ -2,11 +2,14 @@
     export default { 
         data() {
             return {
-                // Add code here
+                blue: true,
+                id: "demo1"
             }
         },
         methods: { 
-   			// Add code here
+   			changeColor(){
+                this.blue = !this.blue
+            }
 		}
     }
 </script>
@@ -15,11 +18,11 @@
     
     <!-- Modify code here -->
     <div class="container">
-        <div v-bind:id="id" class="m-2">
+        <div v-bind:id="id" class="m-2" :class="{'blueBox': blue, 'redBox': !blue}">
             div ID : {{id}} 
         </div>
         
-        <button type="button">Change Color</button>
+        <button @click="changeColor()" :class="{'btn btn-primary': blue, 'btn btn-danger': !blue}" type="button">Change Color</button>
     </div>
 
 </template>

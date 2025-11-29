@@ -1,8 +1,10 @@
 <script>
     export default { 
-
-       // add code here
-
+        data () {
+            return {
+                loginType: "Username login"
+            }
+        }
     }
 </script>
 
@@ -10,13 +12,18 @@
     <h1>Please select your login option</h1>
     <!-- Add/modify code in the following to have a dropdown list 
         which lets the user to select either to login with username or email -->
-    <select>
+    <select v-model="loginType">
         <option selected>Username login</option>
         <option>Email login</option>
     </select>
     
-    <div>
-        <label>Username</label>
+    <div v-if = "loginType == 'Username login'">
+        <label>Username:&nbsp;</label>
         <input placeholder="Enter your username">
+    </div>
+
+    <div v-else>
+        <label>Email:&nbsp;</label>
+        <input placeholder="Enter your email">
     </div>
 </template>
