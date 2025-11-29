@@ -3,18 +3,11 @@
         data() {
             return {
                 // Add code here
-                id:"demo1",
-                blueBox:true,
-                blueBtn:true
             }
         },
         methods: { 
-         // Add code here
-            changeColour() {
-                this.blueBox = !this.blueBox
-                this.blueBtn = !this.blueBtn
-            }
-    }
+   			// Add code here
+		}
     }
 </script>
 
@@ -22,11 +15,11 @@
     
     <!-- Modify code here -->
     <div class="container">
-        <div v-bind:id="id" :class="{'blueBox': blueBox, 'redBox': !blueBox}" class="m-2">
+        <div v-bind:id="id" class="m-2">
             div ID : {{id}} 
         </div>
         
-        <button type="button" v-on:click="changeColour()" :class="{'btn btn-primary': blueBtn, 'btn btn-danger': !blueBtn}">Change Color</button>
+        <button type="button">Change Color</button>
     </div>
 
 </template>
